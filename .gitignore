@@ -1,0 +1,17 @@
+# Dossiers générés par Maven et TestNG
+target/
+test-output/
+
+# Fichiers de configuration Eclipse
+.settings/
+.classpath
+.project
+.metadata/
+
+# Fichiers compilés Java et logs
+*.class
+*.log
+
+# Fichiers système
+.DS_Store
+Thumbs.db

@@ -1,0 +1,31 @@
+package pages;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AdminPage {
+
+	WebDriver driver;
+	
+	WebDriverWait wait;
+	public AdminPage(WebDriver driver) {
+		this.driver = driver;
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	}
+	
+	public final By tilePageAdmin = By.xpath("//span[@class='oxd-topbar-header-breadcrumb']");
+	public final By addBoutton = By.xpath("//button[normalize-space()='Add']");
+	
+	
+	public boolean titlePageAdminIsDisplay() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(tilePageAdmin)).isDisplayed();
+	}
+	
+	public void clickToAdd() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(addBoutton)).click();
+	}
+}
